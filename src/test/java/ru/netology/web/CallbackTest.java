@@ -1,5 +1,6 @@
 package ru.netology.web;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -16,13 +17,13 @@ import static java.awt.SystemColor.text;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class CallbackTest {
-
     private WebDriver driver; //создание драйвера
 
 
     @BeforeAll  //метод запускается перед тестами
     static void setUpAll(){
-        System.setProperty("webdriver.chrome.driver", "driver/win/chromedriver.exe"); // путь к драйверу
+        //System.setProperty("webdriver.chrome.driver", "driver/win/chromedriver.exe"); // путь к драйверу
+        WebDriverManager.chromedriver().setup();
     }
 
     @BeforeEach  //запускатся перед запуском каждого теста
